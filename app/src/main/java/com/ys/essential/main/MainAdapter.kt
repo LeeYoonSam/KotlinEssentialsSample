@@ -1,12 +1,15 @@
 package com.ys.essential.main
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.ys.essential.R
+import com.ys.essential.example.ActivityStateChangesActivity
 
 class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
     private val titles = arrayOf(
@@ -55,6 +58,11 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
                 Snackbar.make(v, "Click detected on item $position", Snackbar.LENGTH_LONG)
                     .setAction("Action", null)
                     .show()
+
+                when(position) {
+                    0 -> v.context.startActivity(Intent(v.context, ActivityStateChangesActivity::class.java))
+                    else -> Toast.makeText(v.context, "not ready", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
