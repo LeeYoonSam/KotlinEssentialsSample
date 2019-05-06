@@ -13,8 +13,9 @@ import com.ys.essential.example.ActivityStateChangesActivity
 
 class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
     private val titles = arrayOf(
-        "Activity State Changes",
-        "Saving and Restoring the State",
+        """
+            |- Activity State Changes
+            |- Saving and Restoring the State""".trimMargin(),
         "View Groups and Layouts",
         "Working with ConstraintLayout Chains and Ratios"
     )
