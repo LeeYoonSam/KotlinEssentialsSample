@@ -10,13 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.ys.essential.R
 import com.ys.essential.example.ActivityStateChangesActivity
+import com.ys.essential.example.ConstraintLayoutTutorialActivity
 
 class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
     private val titles = arrayOf(
         """
             |- Activity State Changes
             |- Saving and Restoring the State""".trimMargin(),
-        "View Groups and Layouts",
+        "27. An Android Studio Layout Editor ConstraintLayout Tutorial",
         "Working with ConstraintLayout Chains and Ratios"
     )
 
@@ -62,6 +63,7 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
                 when(position) {
                     0 -> v.context.startActivity(Intent(v.context, ActivityStateChangesActivity::class.java))
+                    1 -> v.context.startActivity(Intent(v.context, ConstraintLayoutTutorialActivity::class.java))
                     else -> Toast.makeText(v.context, "not ready", Toast.LENGTH_SHORT).show()
                 }
             }
